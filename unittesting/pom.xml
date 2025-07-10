@@ -2,37 +2,53 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-<modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-<groupId>gr.aueb.dmst.pandeliskirpoglou</groupId>
-<artifactId>seip2020_practical_assignments</artifactId>
-<version>0.0.1-SNAPSHOT</version>
+	<groupId>gr.aueb.dmst.pandeliskirpoglou</groupId>
+	<artifactId>seip2020_practical_assignments</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-<name>Testing Arithmetic Operations</name>
-<description>This is a module for testing basic arithmetic operations</description>
+	<name>Testing Arithmetic Operations</name>
+	<description>This is a module for testing basic arithmetic operations</description>
 
-<properties>
-	<maven.compiler.source>17</maven.compiler.source>
-	<maven.compiler.target>17</maven.compiler.target>
-</properties>
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
 
-<dependencies>
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>RELEASE</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.mockito</groupId>
-		<artifactId>mockito-core</artifactId>
-		<version>5.10.0</version>
-		<scope>test</scope>
-	</dependency>
-</dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>5.10.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.0</version> <!-- Use the latest version -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.11.0</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>
+
+			<!-- ✅ JaCoCo Plugin (for code coverage) -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -53,6 +69,24 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- ✅ PIT Plugin (for mutation testing) -->
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.15.2</version>
+				<configuration>
+					<targetClasses>
+						<param>io.*</param> <!-- test mutation for classes in 'io' package -->
+						<param>math.*</param> <!-- and in 'math' package -->
+					</targetClasses>
+					<targetTests>
+						<param>io.*Test</param>
+						<param>math.*Test</param>
+					</targetTests>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

@@ -47,7 +47,8 @@ public class FileIO {
 				}
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			throw new RuntimeException("Error while reading file", e);
 		}
 		
 		if (numbersList.size() == 0) 

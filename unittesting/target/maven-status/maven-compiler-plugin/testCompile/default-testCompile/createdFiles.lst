@@ -1,4 +1,5 @@
 io\FileIOTest.class
 math\MyMathTest.class
 math\ArrayOperationsTest.class
+MyClassTest.class
 math\ArithmeticOperationsTest.class

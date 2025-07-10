@@ -68,4 +68,10 @@ public class MyMathTest {
     public void isPrimeWithLargeInputShouldReturnTrue() {
         assertTrue(math.isPrime(982451653));
     }
+
+    @Test
+    public void isPrimeWithEvenNumberLikeFourShouldReturnFalse() {
+        assertFalse(math.isPrime(4));
+    }
+
 }

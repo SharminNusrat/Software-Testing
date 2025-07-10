@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.*;
+
 import static org.junit.Assert.*;
 
 public class FileIOTest {
@@ -45,5 +47,30 @@ public class FileIOTest {
         assertThrows(IllegalArgumentException.class, () -> {
             fileIO.readFile("nonexistent.txt");
         });
+    }
+
+    @Test
+    public void testReadFile_IOException() {
+        String testPath = "src/test/resources/test_io.txt";
+        try {
+            File testFile = new File(testPath);
+            testFile.getParentFile().mkdirs();
+            try (FileWriter writer = new FileWriter(testFile)) {
+                writer.write("1\n2\n3");
+            }
+            testFile.delete();
+            testFile.mkdir();
+
+            RuntimeException exception = assertThrows(
+                    RuntimeException.class,
+                    () -> fileIO.readFile(testPath)
+            );
+            assertEquals("Error while reading file", exception.getMessage());
+            assertTrue(exception.getCause() instanceof IOException);
+
+            testFile.delete();
+        } catch (IOException e) {
+            fail("Setup failed: " + e.getMessage());
+        }
     }
 }

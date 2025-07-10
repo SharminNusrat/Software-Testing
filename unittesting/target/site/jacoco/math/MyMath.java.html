@@ -9,7 +9,7 @@
  * @since 2020-04-15
  */
 
-<span class="fc" id="L12">public class MyMath {</span>
+<span class="nc" id="L12">public class MyMath {</span>
 
 	/**
 	 * Gets one integer and returns it's factorial.
@@ -20,16 +20,16 @@
 	 */
 
 	public int factorial(int n) {
-<span class="fc" id="L23">		int fact = 1;</span>
-<span class="fc bfc" id="L24" title="All 4 branches covered.">		if (n &lt; 0 || n &gt; 12) {</span>
-<span class="fc" id="L25">			throw new IllegalArgumentException(&quot;number should be 0 or above and 12 or below&quot;);</span>
+<span class="nc" id="L23">		int fact = 1;</span>
+<span class="nc bnc" id="L24" title="All 4 branches missed.">		if (n &lt; 0 || n &gt; 12) {</span>
+<span class="nc" id="L25">			throw new IllegalArgumentException(&quot;number should be 0 or above and 12 or below&quot;);</span>
 		} else {
-<span class="fc bfc" id="L27" title="All 2 branches covered.">			for (int i = 1; i &lt;= n; i++) {</span>
-<span class="fc" id="L28">				fact = fact * i;</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">			for (int i = 1; i &lt;= n; i++) {</span>
+<span class="nc" id="L28">				fact = fact * i;</span>
 			}
 		}
 
-<span class="fc" id="L32">		return fact;</span>
+<span class="nc" id="L32">		return fact;</span>
 	}
 
 	/**
@@ -41,19 +41,19 @@
 	 */
 
 	public boolean isPrime(int n) {
-<span class="fc" id="L44">		boolean isPrimeNumber = true;</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">		if (n &lt; 2) {</span>
-<span class="fc" id="L46">			throw new IllegalArgumentException(&quot;No prime numbers below 2&quot;);</span>
+<span class="nc" id="L44">		boolean isPrimeNumber = true;</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">		if (n &lt; 2) {</span>
+<span class="nc" id="L46">			throw new IllegalArgumentException(&quot;No prime numbers below 2&quot;);</span>
 		} else {
-<span class="fc bfc" id="L48" title="All 2 branches covered.">			for (int i = 2; i &lt;= n / 2; ++i) {  // Checking to n/2 for complexity</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">				if (n % i == 0) {</span>
-<span class="fc" id="L50">					isPrimeNumber = false;</span>
-<span class="fc" id="L51">					break;</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">			for (int i = 2; i &lt;= n / 2; ++i) {  // Checking to n/2 for complexity</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">				if (n % i == 0) {</span>
+<span class="nc" id="L50">					isPrimeNumber = false;</span>
+<span class="nc" id="L51">					break;</span>
 				}
 			}
 		}
 
-<span class="fc" id="L56">		return isPrimeNumber;</span>
+<span class="nc" id="L56">		return isPrimeNumber;</span>
 	}
 
 }

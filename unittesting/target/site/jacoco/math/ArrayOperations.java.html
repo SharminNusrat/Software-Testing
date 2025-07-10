@@ -15,7 +15,7 @@ import io.FileIO;
  * @since 2020-04-18
  */
 
-<span class="fc" id="L18">public class ArrayOperations {</span>
+<span class="nc" id="L18">public class ArrayOperations {</span>
 
 	/**
 	 * Gets one integer and returns true if it is prime and false if it is not.
@@ -27,14 +27,14 @@ import io.FileIO;
 	 */
 
 	public int[] findPrimesInFile(FileIO fileio, String filepath, MyMath myMath) {
-<span class="fc" id="L30">		int[] arrayOfNumbers = fileio.readFile(filepath);</span>
-<span class="fc" id="L31">		List&lt;Integer&gt; arrayOfPrimeNumbers = new ArrayList&lt;&gt;();</span>
-<span class="fc bfc" id="L32" title="All 2 branches covered.">		for (int i = 0; i &lt; arrayOfNumbers.length; i++) {</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">			if (myMath.isPrime(arrayOfNumbers[i])) {</span>
-<span class="fc" id="L34">				arrayOfPrimeNumbers.add(arrayOfNumbers[i]);</span>
+<span class="nc" id="L30">		int[] arrayOfNumbers = fileio.readFile(filepath);</span>
+<span class="nc" id="L31">		List&lt;Integer&gt; arrayOfPrimeNumbers = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L32" title="All 2 branches missed.">		for (int i = 0; i &lt; arrayOfNumbers.length; i++) {</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">			if (myMath.isPrime(arrayOfNumbers[i])) {</span>
+<span class="nc" id="L34">				arrayOfPrimeNumbers.add(arrayOfNumbers[i]);</span>
 			}
 		}
-<span class="fc" id="L37">		return arrayOfPrimeNumbers.stream().mapToInt(i -&gt; i).toArray();</span>
+<span class="nc" id="L37">		return arrayOfPrimeNumbers.stream().mapToInt(i -&gt; i).toArray();</span>
 	}
 
 }
