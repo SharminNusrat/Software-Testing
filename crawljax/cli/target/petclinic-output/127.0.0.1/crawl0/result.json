@@ -1,0 +1,159 @@
+{
+  "states" : {
+    "index" : {
+      "name" : "index",
+      "url" : "http://127.0.0.1:3000",
+      "candidateElements" : [ {
+        "top" : 16,
+        "left" : 123,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[1]/A[1]",
+        "width" : 229,
+        "height" : 46
+      }, {
+        "top" : 4,
+        "left" : 667,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[1]/A[1]",
+        "width" : 103,
+        "height" : 76
+      }, {
+        "top" : 4,
+        "left" : 770,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/A[1]",
+        "width" : 116,
+        "height" : 76
+      }, {
+        "top" : 0,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/UL[1]/LI[1]/A[1]",
+        "width" : 0,
+        "height" : 0
+      }, {
+        "top" : 0,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/UL[1]/LI[2]/A[1]",
+        "width" : 0,
+        "height" : 0
+      }, {
+        "top" : 4,
+        "left" : 887,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[3]/A[1]",
+        "width" : 176,
+        "height" : 76
+      }, {
+        "top" : 0,
+        "left" : 0,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[1]/BUTTON[1]",
+        "width" : 39,
+        "height" : 33
+      } ],
+      "fanIn" : 2,
+      "fanOut" : 2,
+      "id" : 0,
+      "failedEvents" : [ "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/UL[1]/LI[1]/A[1]", "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/UL[1]/LI[2]/A[1]", "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[1]/BUTTON[1]" ],
+      "hasNearDuplicate" : false,
+      "distToNearestState" : -1.0,
+      "cluster" : 0,
+      "timeAdded" : 1753865650451,
+      "onURL" : true,
+      "nearestState" : "null"
+    },
+    "state5" : {
+      "name" : "state5",
+      "url" : "http://127.0.0.1:3000/#!/vets",
+      "candidateElements" : [ ],
+      "fanIn" : 1,
+      "fanOut" : 1,
+      "id" : 5,
+      "failedEvents" : [ ],
+      "hasNearDuplicate" : false,
+      "distToNearestState" : -1.0,
+      "cluster" : 5,
+      "timeAdded" : 1753865655650,
+      "onURL" : false,
+      "nearestState" : "state3"
+    },
+    "state3" : {
+      "name" : "state3",
+      "url" : "http://127.0.0.1:3000/#!/welcome",
+      "candidateElements" : [ {
+        "top" : 4,
+        "left" : 770,
+        "xpath" : "/HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/A[1]",
+        "width" : 116,
+        "height" : 76
+      } ],
+      "fanIn" : 1,
+      "fanOut" : 1,
+      "id" : 3,
+      "failedEvents" : [ ],
+      "hasNearDuplicate" : false,
+      "distToNearestState" : -1.0,
+      "cluster" : 3,
+      "timeAdded" : 1753865654025,
+      "onURL" : false,
+      "nearestState" : "index"
+    }
+  },
+  "edges" : [ {
+    "from" : "index",
+    "to" : "state3",
+    "text" : "Owners",
+    "id" : "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/A[1]",
+    "element" : "Element{node=[A: null], tag=A, text=Owners, attributes={aria-expanded=false, aria-haspopup=true, class=dropdown-toggle, data-toggle=dropdown, href=javascript:void(0), role=button}}",
+    "eventType" : "click"
+  }, {
+    "from" : "state3",
+    "to" : "index",
+    "text" : "Owners",
+    "id" : "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[2]/A[1]",
+    "element" : "Element{node=[A: null], tag=A, text=Owners, attributes={aria-expanded=true, aria-haspopup=true, class=dropdown-toggle, data-toggle=dropdown, href=javascript:void(0), role=button}}",
+    "eventType" : "click"
+  }, {
+    "from" : "index",
+    "to" : "state5",
+    "text" : "Veterinarians",
+    "id" : "xpath /HTML[1]/BODY[1]/LAYOUT-NAV[1]/NAV[1]/DIV[2]/UL[1]/LI[3]/A[1]",
+    "element" : "Element{node=[A: null], tag=A, text=Veterinarians, attributes={href=#!/vets, title=veterinarians, ui-sref=vets}}",
+    "eventType" : "click"
+  }, {
+    "from" : "state5",
+    "to" : "index",
+    "text" : "http://127.0.0.1:3000",
+    "id" : "url http://127.0.0.1:3000",
+    "element" : "unkown",
+    "eventType" : "reload"
+  } ],
+  "statistics" : {
+    "duration" : "6 seconds",
+    "crawlPaths" : 1,
+    "averageDomSize" : "4.162 kB",
+    "edges" : 4,
+    "startDate" : "2025-07-30 14:53:19 BDT",
+    "stateStats" : {
+      "leastFanOut" : {
+        "id" : "state5",
+        "count" : 1
+      },
+      "leastFanIn" : {
+        "id" : "state5",
+        "count" : 1
+      },
+      "mostFanOut" : {
+        "id" : "index",
+        "count" : 2
+      },
+      "mostFanIn" : {
+        "id" : "index",
+        "count" : 2
+      },
+      "totalNumberOfStates" : 3,
+      "urls" : {
+        "http://127.0.0.1:3000" : [ "index" ],
+        "http://127.0.0.1:3000/#!/vets" : [ "state5" ],
+        "http://127.0.0.1:3000/#!/welcome" : [ "state3" ]
+      }
+    },
+    "failedEvents" : 3
+  },
+  "exitStatus" : "EXHAUSTED"
+}
